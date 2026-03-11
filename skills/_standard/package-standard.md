@@ -1,18 +1,13 @@
-# Canonical Specialist Skill Package Standard
+# Skill Package Standard
 
-This document defines the v1 package contract for every specialist skill in this repository. It establishes one canonical package tree, distinguishes required artifacts from optional adapter surfaces, and keeps `SKILL.md` as the source of truth for mixed-agent portability.
+## Purpose
 
-## Package goals
+This document defines the canonical package shape for specialist skills in this repo. It exists so every new skill can be authored, reviewed, and routed consistently across mixed AI-agent environments.
 
-- Make `SKILL.md` the canonical semantic source for every skill.
-- Keep supporting material in stable, discoverable directories instead of embedding everything in one file.
-- Preserve mixed-agent portability by treating runtime adapters as optional projections, not alternate sources of truth.
-- Defer generated adapters and runtime-specific canonical logic until after Phase 1.
-
-## Canonical package tree
+## Canonical Package Tree
 
 ```text
-skills/<skill>/
+skills/<skill-name>/
   SKILL.md
   references/
     <topic>.md
@@ -22,96 +17,47 @@ skills/<skill>/
   validation/
     checklist.md
     evidence.md
-  .claude-plugin/                 # optional adapter surface
+  .claude-plugin/                  # optional adapter
     plugin.json
     CLAUDE.md
-  skills/<skill>/CLAUDE.md        # optional adapter surface
+  skills/<skill-name>/CLAUDE.md    # optional adapter
 ```
 
-Package rules that define the canonical `SKILL.md` contract are specified in [`skill-sections.md`](./skill-sections.md).
+## Required Artifacts
 
-## Required artifacts
+- `SKILL.md`
+  The canonical source of truth for skill semantics.
+- `references/`
+  Focused topic files that support the canonical skill without turning `SKILL.md` into a dump of copied documentation.
+- `examples/happy-path.md`
+  One realistic example showing the skill operating fully within its own boundary.
+- `examples/boundary-handoff.md`
+  One realistic example showing the skill stopping, naming the next owner, or returning control to the orchestrator.
+- `validation/checklist.md`
+  The per-skill completion checklist used during implementation and review.
+- `validation/evidence.md`
+  A record of what was actually checked, what links were verified, and what limitations remain.
 
-Every new v1 skill package must include these artifacts:
+## Optional Artifacts
 
-| Artifact | Required | Purpose |
-|---------|----------|---------|
-| `SKILL.md` | Yes | Canonical skill contract and semantics |
-| `references/` | Yes | Focused source-backed topic files for official guidance |
-| `examples/` | Yes | Canonical examples, including a happy path and a boundary or handoff case |
-| `validation/checklist.md` | Yes | Completion checklist used before claiming the skill is done |
-| `validation/evidence.md` | Yes | Evidence ledger showing what was verified, what remains limited, and link-check status |
+- `.claude-plugin/`
+  Runtime-specific packaging for Claude-related discovery and invocation.
+- `skills/<skill-name>/CLAUDE.md`
+  Runtime-specific adapter surface when a nested CLAUDE skill representation is needed.
 
-Required means the skill is incomplete without the artifact. A maintainer must not infer required content from examples or adapters alone.
+Optional means adapter presence is not required for a skill to be valid. If adapter files exist, they must remain semantically aligned with `SKILL.md`.
 
-## Optional artifacts
+## Rules
 
-These artifacts are optional in v1:
+- `SKILL.md` is canonical. Adapters re-express intent; they do not redefine it.
+- Keep runtime-specific logic out of canonical docs.
+- Use additive normalization for existing skills. Phase 1 should introduce missing standard artifacts without broad rewrites.
+- Keep references focused and topic-based.
+- Treat examples and validation as first-class package content, not optional nice-to-haves.
 
-| Artifact | Required | Purpose |
-|---------|----------|---------|
-| `.claude-plugin/` | No | Runtime-specific Claude adapter packaging when needed |
-| `.claude-plugin/CLAUDE.md` | No | Claude-facing adapter instructions when that adapter surface is used |
-| `skills/<skill>/CLAUDE.md` | No | Nested Claude adapter projection when that shape is used by the runtime |
+## Deferred Items
 
-Optional means the artifact is not required for validity. If an optional adapter exists, it must remain semantically aligned with the canonical `SKILL.md`.
+- Generated adapters
+- Automated conformance tooling
+- Additional runtime adapter shapes beyond the currently observed Claude-related patterns
 
-## Artifact rules
-
-### `SKILL.md`
-
-- `SKILL.md` is the only canonical semantic source.
-- It must use the fixed section order defined in [`skill-sections.md`](./skill-sections.md).
-- It must describe the specialty, boundaries, workflow, outputs, references, validation expectations, and adapter notes without relying on runtime-specific behavior.
-
-### `references/`
-
-- Store focused topic files rather than one catch-all reference dump.
-- Reference files should support direct lookup by topic such as configuration, testing, or integrations.
-- Official documentation sources should be easy to verify and trace from the canonical skill.
-
-### `examples/`
-
-- `examples/` is a first-class directory, not an appendix.
-- Every skill must include at least one realistic happy-path example and one boundary or handoff example.
-- Examples may be executable or clearly labeled pseudo-code when execution is impractical.
-
-### `validation/`
-
-- `validation/checklist.md` defines the conditions for claiming the skill is complete.
-- `validation/evidence.md` records what was actually verified, including link verification outcomes and known limitations.
-- Validation content must be separate from examples so reviewers can distinguish expected behavior from verified evidence.
-
-## Supported adapter patterns
-
-Phase 1 explicitly supports the Claude adapter patterns already observed in this repository:
-
-1. `.claude-plugin/` with `plugin.json`
-2. `.claude-plugin/` with `CLAUDE.md`
-3. Nested `skills/<skill>/CLAUDE.md`
-
-The `aspire` skill demonstrates both `.claude-plugin/` and `skills/aspire/CLAUDE.md`. The `masstransit` skill demonstrates `.claude-plugin/plugin.json` without a nested `CLAUDE.md`. Both are valid package shapes in Phase 1 because adapters are optional thin projections.
-
-## Adapter obligations
-
-- Adapters may reformat, condense, or restate canonical instructions for a runtime.
-- Adapters must not add new task ownership, boundary rules, or workflow semantics that are absent from `SKILL.md`.
-- Adapter presence is optional; semantic parity is mandatory whenever an adapter exists.
-- A missing optional adapter must be treated as an allowed absence, not as a hidden failure.
-
-## Deferred items
-
-The following are intentionally deferred beyond Phase 1:
-
-- Generated adapters or adapter synthesis workflows
-- Runtime-specific canonical logic inside `SKILL.md`
-- Additional adapter families beyond the Claude-related patterns already observed in the repo
-- Any requirement that every skill expose every optional adapter surface
-
-## Review checklist
-
-- One package tree clearly distinguishes required versus optional artifacts.
-- `SKILL.md` is explicitly canonical.
-- `examples/` and `validation/` are first-class directories.
-- Supported adapter patterns match what the repo already uses.
-- Deferred items exclude generated adapters and runtime-specific canonical logic.
