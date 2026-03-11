@@ -10,7 +10,7 @@ This roadmap turns ClaudeSkills from a promising pair of distributed-.NET skills
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions if needed later
 
-- [ ] **Phase 1: Shared Skill Standard** - Define the canonical structure, validation rules, and handoff model for all skills
+- [x] **Phase 1: Shared Skill Standard** - Define the canonical structure, validation rules, and handoff model for all skills (completed 2026-03-11)
 - [ ] **Phase 2: OpenTelemetry Specialist** - Add the observability skill aligned to the standard and existing distributed-.NET baseline
 - [ ] **Phase 3: EF Core Specialist** - Add the persistence skill with clear boundaries against API, messaging, and orchestration concerns
 - [ ] **Phase 4: Minimal API Specialist** - Add the endpoint-focused API skill with explicit contract and handoff rules
@@ -30,9 +30,9 @@ This roadmap turns ClaudeSkills from a promising pair of distributed-.NET skills
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Define the canonical specialist skill structure and required sections
-- [ ] 01-02: Define boundary, handoff, portability, and adapter rules
-- [ ] 01-03: Define examples, references, and validation standards for all v1 skills
+- [x] 01-01: Define the canonical specialist skill structure and required sections
+- [x] 01-02: Define boundary, handoff, portability, and adapter rules
+- [x] 01-03: Define examples, references, and validation standards for all v1 skills
 
 ### Phase 2: OpenTelemetry Specialist
 **Goal**: Add the `opentelemetry-dotnet` skill with realistic distributed-.NET observability guidance and explicit boundaries with `aspire`, `masstransit`, and orchestration.
@@ -97,7 +97,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Shared Skill Standard | 0/3 | Not started | - |
+| 1. Shared Skill Standard | 3/3 | Complete | 2026-03-11 |
 | 2. OpenTelemetry Specialist | 0/2 | Not started | - |
 | 3. EF Core Specialist | 0/2 | Not started | - |
 | 4. Minimal API Specialist | 0/2 | Not started | - |

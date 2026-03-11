@@ -62,10 +62,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STND-01 | Phase 1 | Pending |
-| STND-02 | Phase 1 | Pending |
-| STND-03 | Phase 1 | Pending |
-| STND-04 | Phase 1 | Pending |
+| STND-01 | Phase 1 | Complete |
+| STND-02 | Phase 1 | Complete |
+| STND-03 | Phase 1 | Complete |
+| STND-04 | Phase 1 | Complete |
 | OBS-01 | Phase 2 | Pending |
 | OBS-02 | Phase 2 | Pending |
 | DATA-01 | Phase 3 | Pending |
@@ -74,8 +74,8 @@
 | API-02 | Phase 4 | Pending |
 | TEST-01 | Phase 5 | Pending |
 | TEST-02 | Phase 5 | Pending |
-| PORT-01 | Phase 1 | Pending |
-| PORT-02 | Phase 1 | Pending |
+| PORT-01 | Phase 1 | Complete |
+| PORT-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 14 total
