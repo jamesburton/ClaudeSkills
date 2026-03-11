@@ -11,7 +11,7 @@ This roadmap turns ClaudeSkills from a promising pair of distributed-.NET skills
 - Decimal phases (2.1, 2.2): Urgent insertions if needed later
 
 - [x] **Phase 1: Shared Skill Standard** - Define the canonical structure, validation rules, and handoff model for all skills (completed 2026-03-11)
-- [ ] **Phase 2: OpenTelemetry Specialist** - Add the observability skill aligned to the standard and existing distributed-.NET baseline
+- [x] **Phase 2: OpenTelemetry Specialist** - Add the observability skill aligned to the standard and existing distributed-.NET baseline (completed 2026-03-11)
 - [ ] **Phase 3: EF Core Specialist** - Add the persistence skill with clear boundaries against API, messaging, and orchestration concerns
 - [ ] **Phase 4: Minimal API Specialist** - Add the endpoint-focused API skill with explicit contract and handoff rules
 - [ ] **Phase 5: Integration Testing Specialist** - Add the verification skill for realistic distributed-.NET integration testing
@@ -46,7 +46,7 @@ Plans:
 
 Plans:
 - [x] 02-01: Author core OpenTelemetry guidance, examples, and references
-- [ ] 02-02: Add boundary, validation, and adapter material for the observability skill
+- [x] 02-02: Add boundary, validation, and adapter material for the observability skill
 
 ### Phase 3: EF Core Specialist
 **Goal**: Add the `efcore` skill for persistence design, migrations, and data access patterns in distributed .NET systems.
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Shared Skill Standard | 3/3 | Complete | 2026-03-11 |
-| 2. OpenTelemetry Specialist | 1/2 | In Progress | - |
+| 2. OpenTelemetry Specialist | 2/2 | Complete | 2026-03-11 |
 | 3. EF Core Specialist | 0/2 | Not started | - |
 | 4. Minimal API Specialist | 0/2 | Not started | - |
 | 5. Integration Testing Specialist | 0/2 | Not started | - |
