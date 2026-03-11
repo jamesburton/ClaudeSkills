@@ -57,11 +57,29 @@
 
 ## Adapter Parity
 
-- adapter path:
-  parity outcome: pending review
-  differences found: not yet assessed
-  allowed gap: adapter surfaces are optional until reviewed
+- adapter parity status: complete
+- adapter path: `skills/opentelemetry-dotnet/.claude-plugin/plugin.json`
+  parity outcome: aligned
+  differences found: none; adapter adds package metadata only and does not restate or narrow canonical OpenTelemetry guidance.
+  allowed gap: none
+- adapter path: `skills/opentelemetry-dotnet/.claude-plugin/CLAUDE.md`
+  parity outcome: aligned
+  differences found: none; file remains a claude-mem placeholder and does not introduce runtime-specific OpenTelemetry, aspire, masstransit, or orchestrator semantics.
+  allowed gap: none
+- adapter path: `skills/opentelemetry-dotnet/skills/opentelemetry-dotnet/CLAUDE.md`
+  parity outcome: aligned
+  differences found: none; file remains a claude-mem placeholder and leaves canonical scope, OTLP-first guidance, and boundary rules in `SKILL.md`.
+  allowed gap: none
+
+## Baseline And Status
+
+- verification date: 2026-03-11
+- baseline: canonical skill verified against OpenTelemetry .NET package baseline `1.12.0`, current Microsoft .NET observability guidance, and current OpenTelemetry Collector docs
+- status: audit-ready
+- reference quality: focused official references are grouped by signals/conventions, exporters/Collector, and troubleshooting rather than bundled into one generic list
+- completion proof: validation evidence covers links verified, boundary proof, adapter parity, baseline notes, and known limitations in one place
 
 ## Limitations
 
-- Adapter parity outcome will be finalized after optional Claude-facing surfaces are either added as thin projections or recorded as allowed absences.
+- Adapter files are intentionally thin and do not duplicate canonical semantics, so reviewers must use `SKILL.md` as the source of truth for scope and handoff rules.
+- Link verification confirms liveness on 2026-03-11, but future OpenTelemetry or Microsoft doc reorganizations may require URL refreshes during later validation passes.
