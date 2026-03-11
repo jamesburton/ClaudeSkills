@@ -14,8 +14,8 @@
 
 ### Observability
 
-- [ ] **OBS-01**: Agent can use `opentelemetry-dotnet` to add or review tracing, metrics, and logging guidance for distributed .NET services.
-- [ ] **OBS-02**: Agent can identify when observability work belongs in `opentelemetry-dotnet` versus `aspire`, `masstransit`, or the orchestrator.
+- [x] **OBS-01**: Agent can use `opentelemetry-dotnet` to add or review tracing, metrics, and logging guidance for distributed .NET services.
+- [x] **OBS-02**: Agent can identify when observability work belongs in `opentelemetry-dotnet` versus `aspire`, `masstransit`, or the orchestrator.
 
 ### Persistence
 
@@ -66,8 +66,8 @@
 | STND-02 | Phase 1 | Complete |
 | STND-03 | Phase 1 | Complete |
 | STND-04 | Phase 1 | Complete |
-| OBS-01 | Phase 2 | Pending |
-| OBS-02 | Phase 2 | Pending |
+| OBS-01 | Phase 2 | Complete |
+| OBS-02 | Phase 2 | Complete |
 | DATA-01 | Phase 3 | Pending |
 | DATA-02 | Phase 3 | Pending |
 | API-01 | Phase 4 | Pending |

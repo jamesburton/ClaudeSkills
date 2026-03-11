@@ -45,7 +45,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Author core OpenTelemetry guidance, examples, and references
+- [x] 02-01: Author core OpenTelemetry guidance, examples, and references
 - [ ] 02-02: Add boundary, validation, and adapter material for the observability skill
 
 ### Phase 3: EF Core Specialist
@@ -98,7 +98,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Shared Skill Standard | 3/3 | Complete | 2026-03-11 |
-| 2. OpenTelemetry Specialist | 0/2 | Not started | - |
+| 2. OpenTelemetry Specialist | 1/2 | In Progress | - |
 | 3. EF Core Specialist | 0/2 | Not started | - |
 | 4. Minimal API Specialist | 0/2 | Not started | - |
 | 5. Integration Testing Specialist | 0/2 | Not started | - |
