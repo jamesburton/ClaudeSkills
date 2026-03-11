@@ -1,0 +1,5 @@
+{
+  "name": "opentelemetry-dotnet",
+  "description": ".NET OpenTelemetry skill for traces, metrics, logs, semantic conventions, OTLP export, and telemetry troubleshooting",
+  "version": "1.0.0"
+}
